@@ -1,0 +1,52 @@
+<app-header>New Control Flow Syntax</app-header>
+<!-- Officaial Doc: https://angular.dev/guide/templates/control-flow -->
+
+<h2>Old Syntax (Traditional)</h2>
+
+<!-- *ngIf -->
+<div *ngIf="isLoggedIn">
+  ✅ You are logged in (using *ngIf)
+</div>
+
+<!-- *ngFor -->
+<ul>
+  <li *ngFor="let item of items">
+    {{ item }} (using *ngFor)
+  </li>
+</ul>
+
+<!-- *ngSwitch -->
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">🔴 It's red (using *ngSwitch)</p>
+  <p *ngSwitchCase="'blue'">🔵 It's blue (using *ngSwitch)</p>
+  <p *ngSwitchDefault>⚪ Unknown color (using *ngSwitch)</p>
+</div>
+
+<hr />
+
+
+<h2>New Syntax (Control Flow)</h2>
+
+@if (isLoggedIn) {
+<div>✅ You are logged in (using new Control Flow if)</div>
+}
+
+<ul>
+  @for (item of items; track item) {
+  <li>{{ item }}</li>
+  } @empty {
+  <li>There are no items.</li>
+  }
+</ul>
+
+@switch (color) {
+@case ('red') {
+<p>🔴 It's red (using new Control Flow switchn-> case)</p>
+}
+@case ('blue') {
+<p>🔵 It's blue (using new Control Flow switch)</p>
+}
+@default {
+<p>⚪ Unknown color (using new Control Flow switch -> default)</p>
+}
+}
