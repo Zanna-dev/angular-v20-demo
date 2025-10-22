@@ -1,1 +1,11 @@
-<p>template-syntax works!</p>
+<app-header>Extended Template Syntax</app-header>
+
+<!-- Exponential -->
+<p>{{ base ** exponent }}</p>
+
+<!-- in operator -->
+<!-- checks if the person object contains the name property -->
+<p>Has 'name' property? → {{ 'name' in person }}</p>
+
+<!-- Template literals -->
+<div [class]="`layout col-${colWidth}`">Content</div>

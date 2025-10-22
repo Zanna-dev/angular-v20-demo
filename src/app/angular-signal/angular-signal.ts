@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
+import { Header } from '../header/header/header';
 
 @Component({
   selector: 'app-angular-signal',
-  imports: [],
+  imports: [Header],
   templateUrl: './angular-signal.html',
   styleUrl: './angular-signal.scss'
 })
 export class AngularSignal {
+  counter = signal(0);
+  doubleCount = computed(() => this.counter() * 2);
+
+  increment() {
+    this.counter.update(c => c + 1);
+  }
 
 }
