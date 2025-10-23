@@ -10,6 +10,7 @@ import { Header } from '../../header/header/header';
 })
 export class ControlFlow {
   isLoggedIn = true;
-  items = ['Apple', 'Banana', 'Cherry'];
+  items = ['Apple', 'Banana', 'Cherry', 'Durian'];
   color = 'blue';
+  fontSize = '12px';
 }
