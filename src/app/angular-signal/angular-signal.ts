@@ -15,4 +15,12 @@ export class AngularSignal {
     this.counter.update(c => c + 1);
   }
 
+  decrement() {
+    this.counter.update(c => c - 1);
+  }
+
+  reset() {
+    this.counter.set(0);
+  }
+
 }
